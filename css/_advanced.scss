@@ -1,0 +1,27 @@
+@import 'scss';
+.advanced{
+    ul{
+        li{
+            border-radius: 8px;
+            overflow: hidden;
+            float:left;
+            width:49%;
+            margin-right:2%;
+            @include transition();
+            &:last-child{
+                margin-right:0
+            }
+            a{
+                display:block;
+                width: 100%;
+                height:100%;
+                img{
+                    width:100%;
+                }
+            }
+            &:hover{
+                @include box-shadow(0,5px,10px,0)
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@import 'scss';
+.float{
+    position:fixed;
+    top:55%;
+    right:0;
+    margin-top:-150px;
+    padding:0 16px;
+    background:#FFF;
+    z-index: 998;
+    @include box-shadow(0,4px,12px,0);
+    a{
+        display: block;
+        width: 26px;
+        padding: 14px 0;
+        color: #b5b9bc;
+        text-align: center;
+        border-top: 1px solid #edf1f2;   
+        i{
+            font-size: 18px;
+            color: #D9DDE1;  
+        }
+        span{
+            font-size: 12px;
+            color: #07111b;
+            line-height: 14px;
+            display: none;
+        }
+        &.invite{
+            i{
+                display:inline-block;
+                width:16px;
+                height:18px;
+                background:url(../images/redPacket.png) no-repeat center;
+                background-size:100%;
+            }
+        }
+        &.help,&.backTop{
+            i{
+                font-size:20px;
+            }
+        }
+        &.feedback{
+            border-top:none;
+        }
+        &.backTop{
+            display:none;
+        }
+        .ewm{
+            position: absolute;
+            width: 172px;
+            height: 212px;
+            bottom: -4px;
+            right: 56px;
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: right bottom;
+            transform-origin: right bottom;
+            background: url(../images/elevator.png) no-repeat 0 0;
+        }
+        &.app{
+            .ewm{
+                background-position:0 -220px;
+            }
+        }
+        &:hover{
+            i{
+                display:none;
+            }
+            span{
+                display:block;
+            }
+            .ewm{
+                @include transition();
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+    }
+}

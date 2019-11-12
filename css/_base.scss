@@ -1,0 +1,151 @@
+@import 'scss';
+// css reset
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    outline: none;
+    color:#1C1F21;
+}
+li{
+    list-style: none;
+}
+img{
+    border:none;
+    max-width:100%;
+    vertical-align: middle;
+}
+.fl{
+    float:left
+}
+.fr{
+    float:right
+}
+body{
+    font-family:$fontFamily;
+    color:#1c1f21;
+    font-size:$fontSize;
+    line-height: $lineHeight;
+    background:#FFF;
+    padding-top:$headerHeight;
+    min-width:1200px;
+}
+.clearfix{
+    zoom:1;
+    &:before,&:after{
+        content:'';
+        display:block;
+        visibility: hidden;
+        height:0px;
+        clear:both;
+    }
+}
+.container{
+    width:1152px;
+    margin:0 auto;
+    padding:36px 0 38px;
+    position: relative;
+}
+.bg_ff{
+    position: relative;
+    @include box-shadow(0,2px ,8px ,0 )
+}
+.bg_f5{
+    background: #f8fafc;
+}
+.title{
+    margin-bottom:24px;
+    h2{
+        font-size:24px;
+        color:#1C1F21;
+        line-height:32px;
+        position: relative;
+        span{
+            margin-left: 6x;
+            font-weight: normal;
+            font-size: 14px;
+            color: #545C63;
+            display:inline-block;
+            vertical-align: bottom;
+        }
+        .help{
+            display:inline-block;
+            vertical-align: top;
+            .iconfont{
+                font-size: 22px;
+                line-height: 30px;
+                color: #B2B8BD;
+                cursor: pointer;
+                margin-left: 6px;  
+            }
+            &_wrap{
+                position: absolute;
+                top: 32px;
+                left: 0;
+                z-index: 9;
+                width: 290px;
+                height: 200px;
+                padding: 35px 20px;
+                border-radius: 12px;
+                background: #FFFFFF;
+                @include box-shadow(0,8px,16px,0,rgba(28, 31, 33, 0.2));
+                display: none;
+                dl{
+                    text-align: center;
+                    font-size: 12px;
+                    line-height: 26px;
+                    color: #1C1F21;
+                    dd{
+                        font-weight:400;
+                    }
+                    &:first-child{
+                        border-bottom:1px solid rgba(28, 31, 33, 0.1);
+                        padding-bottom:13px;
+                        margin-bottom:13px;
+                    }
+                }
+            }
+            &:hover{
+                .help_wrap{
+                    display:block;
+                }
+            }
+        }
+    }
+}
+.imooc_nav{
+    margin-left:36px;
+    li{
+        float: left;
+        margin: 0 14px;
+        font-size: 14px;
+        line-height: 30px;
+        color: #545C63;
+        cursor: pointer;
+        &:hover{
+            color:$hoverColor;
+        }
+        &.active{
+            border-bottom:2px solid $hoverColor;
+            color:$hoverColor;
+        }
+    }        
+}
+.more{
+    line-height: 30px;
+    color: #1C1F21;
+    &:hover{
+        opacity:0.9;
+    }
+}
+.ad{
+    width:272px;
+    display:none;
+    img{
+        width:100%
+    }
+}

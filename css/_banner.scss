@@ -1,0 +1,217 @@
+@import 'scss';
+.banner{
+    @include box-shadow(0,12px , 20px ,0);
+    margin-bottom:44px;
+    //banner_aside
+    &_aside{
+        width:216px;
+        height:382px;
+        padding:17px 0;
+        background:#2b333b;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        position:relative;
+        &_nav{
+            li{
+                font-size:14px;
+                height:50px;
+                line-height: 50px;
+                padding-left:12px;
+                a{
+                    display:block;
+                    padding:0 16px;
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                    color:rgba(255,255,255,0.6);
+                    position:relative;
+                    @include transition();
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        width:0;
+                        height:0;
+                        border-left:3px solid rgba(255,255,255,0.6);
+                        border-top:3px solid transparent;
+                        border-bottom:3px solid transparent;
+                        right:16px;
+                        top:50%;
+                        margin-top:-3px;
+                    }
+                }
+                &.active a{
+                    background:rgba(255,255,255,0.3)
+                }
+            }
+        }
+        .banner_aside_item{
+            position: absolute;
+            background:#FFF;
+            width:768px;
+            height:100%;
+            left:216px;
+            top:0;
+            z-index:99;
+            display:none;
+            &_top{
+                padding:26px 36px;
+                dt{
+                    font-size:14px;
+                    color:#1C1F21;
+                    line-height:22px;
+                    font-weight:bold;
+                    margin-bottom:12px;
+                }
+                dd a{
+                    margin:0 20px 16px 0;
+                    font-size:14px;
+                    line-height:22px;
+                    display:inline-block; 
+                    color:#1c1f21;
+                    &:hover{
+                        color:$hoverColor;
+                    }
+                }
+            }
+            &_bottom{
+                position:absolute;
+                width:100%;
+                bottom:0;
+                left:0;
+                background:#F8FAFC;
+                ul{
+                    padding:26px 36px 0;
+                    li{
+                        float:left;
+                        width:48%;
+                        margin:0 4% 4% 0;
+                        &:nth-child(2n){
+                            margin-right: 0;
+                        }
+                        a{
+                            display:block;
+                        }
+                        .pic{
+                            width:70px;
+                            height:52px;
+                            margin-right:16px;
+                            border-radius: 4px;
+                            background:#ccc;
+                            overflow: hidden;
+                            img{
+                                height:100%;
+                                max-width:inherit;
+                                margin-left:-11px;
+                            }
+                        }
+                        .text{
+                            width:230px;
+                            h4{
+                                @extend %ellipsis;
+                                font-size:12px;
+                                line-height: 20px;
+                                margin-bottom:2px;
+                                color:#07111B;
+                                font-weight: normal;
+                            }
+                            p{
+                                font-size:12px;
+                                line-height:18px;
+                                color:#07111B;
+                                span{
+                                    color:#545C63;
+                                }
+                                .iconfont{
+                                    display:inline-block;
+                                    font-size:10px;
+                                    -webkit-transform: scale(0.7);
+                                    transform: scale(0.7);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+    //banner_container
+    &_container{
+        width:936px;
+        height:382px;
+        position: relative;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        overflow: hidden;
+        .banner_wrap{
+            height:100%;position: relative;
+            .slide{
+                position: absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                opacity:0;
+                @include transition(all,0.5s);
+                z-index:-1;
+                &.active{
+                    opacity:1;
+                    z-index:0
+                }
+                a{
+                    display:block;
+                    width: 100%;
+                    height:100%;
+                }
+                img{
+                    width:100%;
+                }
+
+            }
+        }
+        .banner_control{
+            span{
+                position: absolute;
+                top:50%;
+                width:48px;
+                height:48px;
+                line-height:48px;
+                margin-top:-24px;
+                font-size:32px;
+                color:#FFF;
+                border-radius: 50%;
+                text-align: center;
+                background:rgba(28,31,33,0.1);
+                cursor:pointer;
+                @include transition();z-index: 1;
+                &.prev{
+                    left:16px;
+                }
+                &.next{
+                    right:16px;
+                }
+                &:hover{
+                    background:rgba(28,31,33,0.5)
+                }
+            }
+        }
+        .banner_pagnation{
+            position: absolute;
+            right:24px;
+            bottom:20px;
+            z-index: 2;
+            span{
+                display:inline-block;
+                width:8px;
+                height:8px;
+                border-radius: 4px;
+                margin-left:8px;
+                opacity:0.75;
+                @include transition(width,0.2s);
+                 background:#FFF;
+                 cursor:pointer;
+                 &.active{
+                    width:20px;
+                }
+            }
+        }
+    }                    
+}

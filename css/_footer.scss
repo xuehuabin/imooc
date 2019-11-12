@@ -1,0 +1,67 @@
+.imooc_footer{
+    .container{
+        padding:36px 0;
+    }
+    .footer_nav{
+        a{
+            float:left;
+            font-size:14px;
+            line-height: 2;
+            margin: 0 10px;
+            color: #99a1a6; 
+            &:hover{
+                color: #1c1f21;
+            }
+        }
+    }
+    .footer_copy{
+        font-size: 12px;
+        line-height: 2;
+        padding-left: 10px;
+        margin-top: 8px;
+        color: #93999F;
+    }
+    .footer_share{
+        .fl{
+            margin-left:30px;
+            text-align: center;
+            p{
+                font-size: 12px;
+                color: #4D555D;
+                line-height: 2;
+            }
+            a{
+                display: inline-block;
+                position: relative;
+                height: 32px;
+                width: 32px;
+                background-image: url(../images/idx-btm.png);
+                background-repeat: no-repeat;
+                &.wx{
+                    background-position: -52px -221px;
+                    .ewm{
+                        position: absolute;
+                        width: 172px;
+                        height: 212px;
+                        left: -77px;
+                        bottom: 40px;
+                        background: url(../images/elevator.png) no-repeat 0 0;     
+                        display: none;
+                    }
+                    &:hover{
+                        background-position: -52px -262px;
+                        .ewm{
+                            display:block;
+                        }
+                    }
+                }
+                &.wb{
+                    background-position: 0 -221px;
+                    &:hover{
+                        background-position: 0 -262px;
+                    }
+                }
+            }    
+        }
+    }
+}
